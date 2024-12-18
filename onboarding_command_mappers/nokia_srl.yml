@@ -6,21 +6,18 @@ sync_devices:
         parser: "none"
         jpath: "'basic system info'.'Hostname'"
         post_processor: "{{ obj | upper }}"
-        iterable: true
   serial:
     commands:
       - command: "show version | as json"
         parser: "none"
         jpath: "'basic system info'.'Serial Number'"
         post_processor: "{{ obj | upper }}"
-        iterable: true
   device_type:
     commands:
       - command: "show version | as json"
         parser: "none"
         jpath: "'basic system info'.'Chassis Type'"
         post_processor: "{{ obj | upper }}"
-        iterable: true
   mgmt_interface:
     commands:
       - command: "show interface all | as json"
